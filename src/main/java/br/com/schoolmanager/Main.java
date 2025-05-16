@@ -8,6 +8,7 @@ import br.com.schoolmanager.model.academico.atividade.AvaliacaoAluno;
 import br.com.schoolmanager.model.academico.atividade.Prova;
 import br.com.schoolmanager.model.academico.atividade.Trabalho;
 import br.com.schoolmanager.model.pessoa.Aluno;
+import br.com.schoolmanager.model.pessoa.Pessoa;
 import br.com.schoolmanager.model.pessoa.Professor;
 import br.com.schoolmanager.service.GerenciadorAcademico;
 import br.com.schoolmanager.service.GerenciadorPessoas;
@@ -208,6 +209,41 @@ public class Main {
                 gerenciadorAcademico.buscarAvaliacoesPorAlunoEmDisciplina(aluno1, matematica);
         for (AvaliacaoAluno avaliacao : avaliacoesAluno1Matematica) {
             System.out.println("- " + avaliacao.getAtividade().getNome() + ": Nota " + avaliacao.getNotaObtida());
+        }
+
+        //REMOÇÃO DE PESSOAS
+        System.out.println("\n=== REMOÇÃO DE PESSOAS ===");
+
+        // Remover um aluno
+        String matriculaAlunoRemover = "A002";
+        gerenciadorPessoas.removerAluno(matriculaAlunoRemover);
+        System.out.println("Aluno com matrícula " + matriculaAlunoRemover + " foi removido");
+
+        // Remover um professor
+        String matriculaProfessorRemover = "P001";
+        gerenciadorPessoas.removerProfessor(matriculaProfessorRemover);
+        System.out.println("Professor com matrícula " + matriculaProfessorRemover + " foi removido");
+
+        // Listar alunos após remoção
+        System.out.println("\nLista atualizada de alunos:");
+        List<Aluno> alunosRestantes = gerenciadorPessoas.buscarTodosAlunos();
+        if (alunosRestantes.isEmpty()) {
+            System.out.println("Não há alunos cadastrados");
+        } else {
+            for (Aluno aluno : alunosRestantes) {
+                System.out.println("Aluno: " + aluno.getNome() + " - Matrícula: " + aluno.getMatricula());
+            }
+        }
+
+        // Listar professores após remoção
+        System.out.println("\nLista atualizada de professores:");
+        List<Professor> professoresRestantes = gerenciadorPessoas.buscarTodosProfessores();
+        if (professoresRestantes.isEmpty()) {
+            System.out.println("Não há professores cadastrados");
+        } else {
+            for (Professor professor : professoresRestantes) {
+                System.out.println("Professor: " + professor.getNome() + " - Matrícula: " + professor.getMatricula());
+            }
         }
 
     }
