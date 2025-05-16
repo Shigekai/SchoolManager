@@ -1,7 +1,7 @@
 package br.com.schoolmanager.service;
 
 import br.com.schoolmanager.model.pessoa.Aluno;
-import br.com.schoolmanager.model.pessoa.PessoaRepository;
+import br.com.schoolmanager.repository.PessoaRepository;
 import br.com.schoolmanager.model.pessoa.Professor;
 
 import java.util.List;

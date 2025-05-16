@@ -6,8 +6,8 @@ public class Aluno extends Pessoa{
         super(nome, matricula);
     }
 
-    public Aluno(String nome, String matricula, String email){
-        super(nome, matricula, email);
+    public Aluno(String nome, String email, String matricula){
+        super(nome, email, matricula);
     }
 
     @Override
