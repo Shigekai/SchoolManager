@@ -5,15 +5,14 @@ public abstract class Pessoa {
     private String email;
     private String matricula;
 
-    public Pessoa(String nome, String email, String matricula){
+    public Pessoa(String nome, String matricula) {
         this.nome = nome;
-        this.email = email;
         this.matricula = matricula;
     }
 
-    public Pessoa(String nome, String matricula){
-        this.nome = nome;
-        this.matricula = matricula;
+    public Pessoa(String nome, String matricula, String email) {
+        this(nome, matricula);
+        this.email = email;
     }
 
     public String getNome(){
