@@ -29,5 +29,4 @@ public class AvaliacaoAluno {
         this.notaObtida = notaObtida;
     }
 
-
 }

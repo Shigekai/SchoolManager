@@ -40,4 +40,12 @@ public class GerenciadorPessoas {
         return professorRepository.buscarTodos();
     }
 
+    public void removerAluno(String matricula){
+        alunoRepository.remover(matricula);
+    }
+
+    public void removerProfessor(String matricula){
+        professorRepository.remover(matricula);
+    }
+
 }
